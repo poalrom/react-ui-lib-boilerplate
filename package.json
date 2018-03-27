@@ -4,11 +4,10 @@
   "description": "Boilerplate for building ui lib using react",
   "main": "src/index.js",
   "scripts": {
+    "lint": "eslint \"src/**/*.js\" & stylint src",
     "test": "jest",
     "test:coverage": "jest --coverage",
-    "watch": "webpack --watch",
     "start": "webpack-dev-server --open --port 6482",
-    "build": "webpack",
     "styleguide": "styleguidist server",
     "styleguide:build": "styleguidist build"
   },

@@ -1,5 +1,5 @@
 module.exports = {
-  title: 'Cons UI Style Guide',
+  title: 'Style Guide',
   showUsage: true,
   sortProps: props => props.sort((a, b) => {
     if (a.required && !b.required) { return -1; }
