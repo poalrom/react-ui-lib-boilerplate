@@ -1,5 +1,7 @@
 # Boilerplate for library of React UI components
 
+> Fully compatible with [react-redux-flow-boilerplate](https://github.com/poalrom/react-redux-flow-boilerplate)
+
 ## What is this?
 
 This is a prepared flow with convenient utils for building your own component library.
