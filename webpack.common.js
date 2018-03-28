@@ -1,14 +1,13 @@
 const path = require('path');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
   output: {
-    path: path.resolve(__dirname, 'public'),
+    path: path.resolve(__dirname, 'dist'),
     filename: 'main.js',
-  },
-  devtool: 'inline-source-map',
-  devServer: {
-    contentBase: path.resolve(__dirname, 'src'),
   },
   module: {
     rules: [
@@ -24,17 +23,23 @@ module.exports = {
         use: 'babel-loader',
       },
       {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
-      },
-      {
-        test: /\.styl$/,
         enforce: 'pre',
+        test: /\.styl$/,
         use: 'stylint-loader',
       },
       {
+        test: /\.css$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: 'css-loader',
+        }),
+      },
+      {
         test: /\.styl$/,
-        use: ['style-loader', 'css-loader', 'stylus-loader'],
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: ['css-loader', 'stylus-loader'],
+        }),
       },
       {
         test: /\.(jpg|png|svg)$/,
@@ -47,4 +52,9 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new ExtractTextPlugin('main.css'),
+    new CleanWebpackPlugin(['dist']),
+    new CopyWebpackPlugin(['./src/index.html']),
+  ],
 };

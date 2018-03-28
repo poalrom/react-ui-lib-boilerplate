@@ -7,7 +7,8 @@
     "lint": "eslint \"src/**/*.js\" & stylint src",
     "test": "jest",
     "test:coverage": "jest --coverage",
-    "start": "webpack-dev-server --open --port 6482",
+    "build": "webpack --config webpack.prod.js",
+    "start": "webpack-dev-server --open --port 6482 --config webpack.dev.js",
     "styleguide": "styleguidist server",
     "styleguide:build": "styleguidist build"
   },
@@ -26,6 +27,8 @@
     "babel-preset-flow": "^6.23.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
+    "clean-webpack-plugin": "^0.1.19",
+    "copy-webpack-plugin": "^4.5.1",
     "css-loader": "^0.28.8",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
@@ -52,10 +55,11 @@
     "stylint-loader": "^1.0.0",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
+    "uglifyjs-webpack-plugin": "^1.2.4",
     "url-loader": "^0.6.2",
     "webpack": "^3.10.0",
     "webpack-dev-server": "^2.11.0",
-    "webpack-merge": "latest",
+    "webpack-merge": "^4.1.2",
     "yargs": "^9.0.1"
   },
   "dependencies": {
