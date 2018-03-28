@@ -57,9 +57,8 @@ exports[`render a disabled button 1`] = `
 
 exports[`render a loading button 1`] = `
 <button
-  className="button"
+  className="button button_loading"
   disabled={false}
-  isLoading={true}
   onClick={[Function]}
   type="button"
 >

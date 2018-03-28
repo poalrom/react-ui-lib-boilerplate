@@ -5,6 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "lint": "eslint \"src/**/*.js\" & stylint src",
+    "lint:fix": "eslint \"src/**/*.js\" --fix",
     "test": "jest",
     "test:coverage": "jest --coverage",
     "build": "webpack --config webpack.prod.js",

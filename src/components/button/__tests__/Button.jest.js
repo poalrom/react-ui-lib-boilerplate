@@ -8,7 +8,7 @@ test('render a button', () => {
 });
 
 test('render a loading button', () => {
-  const wrapper = shallow(<Button isLoading>Button with loader</Button>);
+  const wrapper = shallow(<Button loading>Button with loader</Button>);
   expect(wrapper).toMatchSnapshot();
 });
 
